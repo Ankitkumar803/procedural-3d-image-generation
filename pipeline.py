@@ -10,7 +10,7 @@ damaged_intact_ratio = 0.4
 # Specify the number of images you want to create. Depending on your computer, one image pair can take between 2 and 10 minutes to render
 num_images = 100
 # Specify the absolute path where you want to store the created images
-file_base_path = "D:\data_gen\Created_images"
+file_base_path = r'"D:\data_gen\Created_images"'      # NOTE : r'"<-----link ---->"'
 blender_executable = r'"C:\Program Files\Blender Foundation\Blender 2.83\blender.exe"'
 
 # ------------- Pipeline start -------------
