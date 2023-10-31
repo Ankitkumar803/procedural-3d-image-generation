@@ -8,9 +8,10 @@ from PIL import ImageDraw
 # 40% will be damaged, 60% okay
 damaged_intact_ratio = 0.4
 # Specify the number of images you want to create. Depending on your computer, one image pair can take between 2 and 10 minutes to render
-num_images = 2
+num_images = 100
 # Specify the absolute path where you want to store the created images
-file_base_path = "path/to/folder"
+file_base_path = "D:\data_gen\Created_images"
+blender_executable = r'"C:\Program Files\Blender Foundation\Blender 2.83\blender.exe"'
 
 # ------------- Pipeline start -------------
 
@@ -42,6 +43,6 @@ for i in range(0, num_images):
     coinflip = random.uniform(0, 1)
 
     if coinflip < damaged_intact_ratio:
-        os.system(f"blender Package.blend --python blenderBackgroundTask.py -- damaged {serial_number} {file_base_path}")
+        os.system(f"{blender_executable} Package.blend --python blenderBackgroundTask.py -- damaged {serial_number} {file_base_path}")
     else:
-        os.system(f"blender Package.blend --python blenderBackgroundTask.py -- intact {serial_number} {file_base_path}")
+        os.system(f"{blender_executable} Package.blend --python blenderBackgroundTask.py -- intact {serial_number} {file_base_path}")
